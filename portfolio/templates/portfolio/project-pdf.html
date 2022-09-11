@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+    .foto{ float: left;
+    width: 100px;
+    margin: 10px 40px;
+}
+</style>
+</head>
+<body>
+    <img src="core\static\core\img\logoSecoed.jpeg" class="foto" alt="Secoed">
+    <h1>Neepository- SECOED </h1>
+    <h2>Lista de Herramientas</h2>
+    <h3>Cantidad Herramientas: {{ count }}</h3>
+    
+<h1 class="text-center">Reporte de Herramientas</h1>
+<table class="table">
+     <thead class="thead-dark">
+        <th width="150">Nombres</th>
+        <th width="150">Categoria</th>
+        <th width="200">subcategoria</th>
+        
+    </thead>
+    <tbody>
+     {% for project in object_list %}
+         <tr>
+            <td>{{project.title}}</td>
+            <td style="text-align: center;">{{project.categoria}}</td>
+            <td style="text-align: center;">{% for categ in project.subcategoria.all %} {{categ.subcategoria}}{% endfor %}</td>
+            <td> <img class="img-fluid" src="{{project.image.url}}" alt=""></td>
+          </tr>
+      {% endfor %}
+    </tbody>
+
+</table>
+</body>
+</html>

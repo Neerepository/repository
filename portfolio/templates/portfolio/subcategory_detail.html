@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %} {% block title %} Detalle {% endblock %} {% block
+background %}{% load static %}{% static 'core/img/Educación-Inclusiva.png' %}{%
+endblock %} {% block header %}
+<h1>Detalles</h1>
+<span class="subheading">Software</span>
+{% endblock header %} {% block content %}
+ {% include 'portfolio/includes/project_menu.html'%}
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-9 mx-auto mb-5">
+      <div class="row">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">{{subcategory.subcategoria}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{subcategory.categoria}}</h6>
+            <p class="card-text">{{subcategory.description}}</p>
+          </div>
+        </div>
+      
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
